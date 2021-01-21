@@ -22,10 +22,9 @@ function getSongsArtist (id, db = database) {
 
 function joinUsersWithPlaylist(id, db = database) {
   return db('users')
-    .join('playlists', 'users.id', 'user_id')
+    .join('playlists', 'users.id', 'playlists.user_id')
     .where('users.id', id)
     .select('users.id', 'users.name',  'playlists.name')
-    .first()
     .then(result => result)
 }
 
