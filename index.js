@@ -46,8 +46,10 @@ const userData = {
 }
 
 const playlist = {
-  id: 1,
-  name: 'test1',
+  id: {
+    id: 1,
+    name: 'test1'
+  }
 }
 
 const currentPlayList = {
@@ -66,7 +68,7 @@ server.get('/', (req, res) => {
     user: userData
   }
   console.log(viewData)
-  res.render('home', viewData )
+  res.render('home', viewData)
 })
 
 server.get('/user', (req, res) => {
@@ -75,17 +77,18 @@ server.get('/user', (req, res) => {
     playlist: playlist
   }
   console.log(viewData)
-  res.render('user', viewData )
+  res.render('user', viewData)
 })
 
-server.get('/user/playlist', (req, res) => {
-  const viewData = {
-    user: userData,
-    currentlist: currentPlayList
-  }
-  console.log("asdfdasfdasf")
-  res.render('playlist', viewData )
-})
+
+// server.get('/user/playlist', (req, res) => {
+//   const viewData = {
+//     user: userData,
+//     currentlist: currentPlayList
+//   }
+//   console.log("asdfdasfdasf")
+//   res.render('playlist', viewData )
+// })
 
 const port = 3000
 
