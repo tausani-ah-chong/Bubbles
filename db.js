@@ -30,4 +30,3 @@ function joinUsersWithPlaylist(id, db = database) {
     .then(result => result)
 }
 
-joinUsersWithPlaylist(1)
