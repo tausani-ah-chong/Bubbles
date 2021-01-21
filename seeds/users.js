@@ -6,10 +6,10 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('table_name').insert([
         {id: 1, name: 'multi', bio:''},
-        {id: 2, name: 'pete', bio:''},
-        {id: 3, name: 'peter', bio:''},
+        {id: 2, name: 'tausani', bio:''},
+        {id: 3, name: 'pete', bio:''},
         {id: 4, name: 'steve', bio:''},
-        {id: 5, name: 'tausani', bio:''}
+        {id: 5, name: 'peter', bio:''}
       ]);
     });
 };
