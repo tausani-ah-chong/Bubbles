@@ -11,6 +11,10 @@ module.exports = {
     postProcessResponse: (result, queryContext) => {
       console.log(result)
       return result
+    },
+    pool: {
+      afterCreate: (conn, cb) =>
+        conn.run('PRAGMA foreign_keys = ON', cb)
     }
   },
 
@@ -44,6 +48,14 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations'
     }
-  }
+  },
+
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: ':memory:'
+    },
+    useNullAsDefault: true
+  },
 
 };
