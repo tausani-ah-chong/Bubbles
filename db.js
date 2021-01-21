@@ -3,7 +3,7 @@ const config = require('./knexfile').development
 const database = knex(config)
 
 module.exports = {
-  // getUsers,
+   getUsers,
   // getPlaylist,
   // getSong,
 }
