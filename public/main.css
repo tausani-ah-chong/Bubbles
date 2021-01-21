@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #252525;
+}
+
+.container {
+  width: 75%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  text-align:center;
+}
+
+a.userLink {
+  width: 33.3%;
+}
+
+.userCard > img {
+  width: 100%;
+  height: auto;
+}
+
+.userCard > h3 {
+  margin: 3% auto ;
+}
+
+.userCard > p {
+  margin: 0;
+}
+
+.userProfile > img{
+  width: 500px; 
+  height: 500px;
+}
+

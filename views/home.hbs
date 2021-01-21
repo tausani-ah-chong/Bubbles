@@ -1,0 +1,19 @@
+<header>
+  <h1>Welcome to Bubbles</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, asperiores possimus numquam dicta nisi nobis,
+    aspernatur maiores obcaecati eos non ipsam est.</p>
+</header>
+
+<main>
+  <section class="row">
+    {{#each user}}
+    <a class="userLink" href="{{id}}">
+      <div class="userCard">
+        <img src={{img}} alt="user image">
+        <h3>{{name}}</h3>
+        <p>{{city}}</p>
+      </div>
+    </a>
+    {{/each}}
+  </section>
+</main>

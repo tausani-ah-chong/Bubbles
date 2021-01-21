@@ -1,0 +1,21 @@
+<header class="profileTitle">
+  <h1>Bubbles</h1>
+  <p>Music your way</p>
+</header>
+
+<main class="userProfile">
+  <img src={{user.user1.img}} alt="user image">
+  <h1>{{user.user1.name}}</h1>
+  <h1>{{user.user1.city}}</h1>
+</main>
+
+
+<aside>
+  <ul>
+    {{#each playlist}}
+    <li>
+      <a href={{playListId}}>{{playlist.name}}</a>
+    </li>
+    {{/each}}
+  </ul>
+</aside>
