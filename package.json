@@ -4,8 +4,9 @@
   "description": "## MVP",
   "main": "index.js",
   "scripts": {
-    "dev": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",

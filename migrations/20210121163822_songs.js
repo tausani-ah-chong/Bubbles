@@ -1,8 +1,8 @@
 exports.up = knex => {
   return knex.schema.createTable('songs', (table => {
     table.increments('id').primary()
-    table.string('song')
     table.string('artist')
+    table.string('song_name')
   }))
 }
 
