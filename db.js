@@ -3,9 +3,9 @@ const config = require('./knexfile').development
 const database = knex(config)
 
 module.exports = {
-  // getUsers,
-  // getPlaylist,
-  // getSong,
+  getUsers,
+  getSongsArtist,
+  joinUsersWithPlaylist,
 }
 
 function getUsers (db = database) {
@@ -13,10 +13,18 @@ function getUsers (db = database) {
     .select()
 }
 
-function getPlaylist (db = database) {
-
+function getSongsArtist (id, db = database) {
+  return db('playlistsongs')
+    .join('songs', 'playlistsongs.song_id', 'songs.id')
+    .where('playlist_id', id)
+    .select()
 }
 
-function getSong (db = database) {
-  
+function joinUsersWithPlaylist(id, db = database) {
+  return db('users')
+    .join('playlists', 'users.id', 'playlists.user_id')
+    .where('users.id', id)
+    .select('users.id', 'users.name',  'playlists.name')
+    .then(result => result)
 }
+
