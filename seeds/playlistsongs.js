@@ -1,10 +1,10 @@
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('playlistsongs').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
+      return knex('playlistsongs').insert([
         { playlist_id: 1, song_id: 1 },
         { playlist_id: 1, song_id: 2 },
         { playlist_id: 1, song_id: 3 },
