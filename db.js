@@ -6,6 +6,8 @@ module.exports = {
   // getUsers,
   // getPlaylist,
   // getSong,
+  //joinUsersWithPlaylist,
+
 }
 
 function getUsers (db = database) {
@@ -25,9 +27,7 @@ function joinUsersWithPlaylist(id, db = database) {
   return db('users')
     .join('playlists', 'users.id', 'user_id')
     .where('users.id', id)
-    .select('users.id', 'users.name',  'playlists.name')
+    .select('users.id', 'users.name',  'playlists_name as playlistName')
     .first()
     .then(result => result)
 }
-
-joinUsersWithPlaylist(1)
