@@ -9,7 +9,12 @@ const router = express.Router()
 
 
 router.get('/', (req, res) => {
-    res.render('home')
+   return  db.getUsers()
+    .then( viewData => {
+        console.log(viewData)
+       return res.render('home', {viewData: viewData})
+    })
+    
 })
 
 
