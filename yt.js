@@ -2,7 +2,7 @@ const {google} = require('googleapis');
 const youtube = google.youtube('v3');
 
 async function getFirstVideo(searchquery) {
-  const auth = process.env.YTAPI
+  const auth = 'AIzaSyB818aMQeEdJ-qD25bkubZ16dmWk0_8_hI'
   google.options({ auth });
 
   const res = await youtube.search.list({
