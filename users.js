@@ -44,7 +44,8 @@ router.get('/playlist/:id', (req, res) => {
         const songs = (result.map((song) => {
             return {
                 name: song.song_name,
-                artist: song.artist
+                artist: song.artist,
+                id: song.song_id
             }
         }))
         const viewData = {
