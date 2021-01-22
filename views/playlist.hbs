@@ -1,4 +1,4 @@
-<header class="profileTitle">
+<header class="profileTitle header">
   <h1>Bubbles</h1>
   <p>Music your way</p>
 </header>
@@ -9,12 +9,13 @@
       {{#each songs}}
       <a href="/song/{{id}}">
         <li>
-          <p>{{name}} : {{artist}}</p>
+          <p>{{name}} | by: {{artist}}</p>
+          <br>
         </li>
       </a>
       {{/each}}
     </ul>
-    <button class="whiteBtn"><a href="/">HOME</a></button>
+    <button class="whiteBtn btn"><a href="/">HOME</a></button>
   </section>
 </main>
 
