@@ -17,6 +17,7 @@ function getUsers (db = database) {
 function getSongsArtist (id, db = database) {
   return db('playlistsongs')
     .join('songs', 'playlistsongs.song_id', 'songs.id')
+    .join('playlists', 'playlistsongs.playlist_id', 'playlists.id')
     .where('playlist_id', id)
     .select()
 }
