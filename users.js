@@ -20,6 +20,8 @@ router.get('/', (req, res) => {
 })
 
 
+//HOME PAGE ROUTE
+
 router.get ('/user/:id', (req, res) => {
     const id = Number(req.params.id)
     return db.joinUsersWithPlaylist(id)
@@ -31,6 +33,8 @@ router.get ('/user/:id', (req, res) => {
             res.status(500).send('DATABASE ERROR: ' + err.message)
           })
 })
+
+// USER PAGE ROUTE 
 
 router.get('/playlist/:id', (req, res) => {
     return db.getSongsArtist(parseInt(req.params.id))
@@ -52,5 +56,13 @@ router.get('/playlist/:id', (req, res) => {
     })
     .catch((err) => console.log(err))
 })
+
+
+// REGISTRATION PAGE ROUTE
+
+router.get('/registration', (req, res) => {
+    res.render('registration')
+})
+
 
 module.exports = router
