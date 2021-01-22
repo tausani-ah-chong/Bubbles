@@ -4,17 +4,17 @@
 </header>
 
 <main class="userProfile">
-  <img src={{user.user1.img}} alt="user image">
+  <img src={{img}} alt="user image">
   <section class="bio">
     <header>
-      <h1>{{user.user1.name}}</h1>
-      <h2>{{user.user1.city}}</h2>
+      <h1>{{userName}}</h1>
+      <h2>{{city}}</h2>
     </header>
 
     <ul>
-      {{#each playlist}}
+      {{#each viewData}}
       <li>
-        <a href={{playlistId}}>{{playlist.id.name}}Playlist Name</a>
+        <a href={{playlistId}}>Playlist Name: {{playlistName}}</a>
       </li>
       {{/each}}
     </ul>
