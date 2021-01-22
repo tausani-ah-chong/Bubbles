@@ -5,6 +5,7 @@ const express = require('express')
 const db = require('./db')
 
 const router = express.Router()
+const yt = require('./yt')
 
 
 
@@ -57,11 +58,23 @@ router.get('/playlist/:id', (req, res) => {
     .catch((err) => console.log(err))
 })
 
-// REGISTRATION PAGE ROUTE
+
+router.get('/song/:id', (req, res) => {
+    const songId = req.params.id
+    db.getSong(songId)
+      .then(song => {
+          const query = song.artist + ' ' + song.song_name
+          return yt.getFirstVideo(query)
+      })
+      .then(result => {
+          const videoURL = 'https://www.youtube.com/watch?v=' + result
+          res.redirect(videoURL)
+      })
+})
+
 router.get('/registration', (req, res) => {
     res.render('registration')
 })
-
 
 router.post('/registration', (req, res) => {
     const input = req.body
