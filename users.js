@@ -5,6 +5,7 @@ const express = require('express')
 const db = require('./db')
 
 const router = express.Router()
+const yt = require('./yt')
 
 
 
@@ -53,4 +54,15 @@ router.get('/playlist/:id', (req, res) => {
     .catch((err) => console.log(err))
 })
 
+
+router.get('/song/:id', (req, res) => {
+    const songId = req.params.id
+    db.getSong(songId)
+      .then(song => {
+          const query = song.artist + ' ' + song.name
+          return yt.getFirstVideo(query)
+      })
+      .then(result => console.log(result))
+
+})
 module.exports = router

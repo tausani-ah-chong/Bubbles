@@ -7,6 +7,14 @@ module.exports = {
   getSongsArtist,
   joinUsersWithPlaylist,
   insertUser,
+  getSong
+}
+
+function getSong (id, db = database) {
+  return db('songs')
+  .where('id', id)
+  .first()
+  .select()
 }
 
 function getUsers (db = database) {
