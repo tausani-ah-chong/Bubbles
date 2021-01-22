@@ -57,16 +57,22 @@ router.get('/playlist/:id', (req, res) => {
     .catch((err) => console.log(err))
 })
 
-
+// REGISTRATION PAGE ROUTE
 router.get('/registration', (req, res) => {
     res.render('registration')
 })
 
 
 router.post('/registration', (req, res) => {
-    const { name, city } = req.body
-    return db.createUser(name, city)
+    const input = req.body
+    return db.insertUser(input)
         .then(() => res.redirect('/'))
 })
 
+
+// PLAYLIST ROUTE
+
+// router.get('/user/playlist/:id', () => {
+//     const 
+// })
 module.exports = router
