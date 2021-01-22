@@ -21,17 +21,21 @@ router.get('/', (req, res) => {
 })
 
 
+//HOME PAGE ROUTE
+
 router.get ('/user/:id', (req, res) => {
     const id = Number(req.params.id)
     return db.joinUsersWithPlaylist(id)
         .then(viewData => {
             console.log(viewData)
-           return  res.render('user', {viewData: viewData})
+           return  res.render('user',  viewData)
         })
         .catch(err => {
             res.status(500).send('DATABASE ERROR: ' + err.message)
           })
 })
+
+// USER PAGE ROUTE 
 
 router.get('/playlist/:id', (req, res) => {
     return db.getSongsArtist(parseInt(req.params.id))
@@ -54,7 +58,6 @@ router.get('/playlist/:id', (req, res) => {
     .catch((err) => console.log(err))
 })
 
-
 router.get('/song/:id', (req, res) => {
     const songId = req.params.id
     db.getSong(songId)
@@ -66,6 +69,16 @@ router.get('/song/:id', (req, res) => {
           const videoURL = 'https://www.youtube.com/watch?v=' + result
           res.redirect(videoURL)
       })
-
 })
+
+router.get('/registration', (req, res) => {
+    res.render('registration')
+})
+
+router.post('/registration', (req, res) => {
+    const { name, city } = req.body
+    return db.createUser(name, city)
+        .then(() => res.redirect('/'))
+})
+
 module.exports = router

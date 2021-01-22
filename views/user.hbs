@@ -4,7 +4,7 @@
 </header>
 
 <main class="userProfile">
-  <img src={{img}} alt="user image">
+  <img src="/images/{{img}}" alt="user image">
   <section class="bio">
     <header>
       <h1>{{userName}}</h1>
@@ -12,7 +12,7 @@
     </header>
 
     <ul>
-      {{#each viewData}}
+      {{#each playlists}}
       <li>
         <a href={{playlistId}}>Playlist Name: {{playlistName}}</a>
       </li>

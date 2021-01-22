@@ -7,7 +7,7 @@
 <main>
   <section class="row">
     {{#each viewData}}
-    <a class="userLink" href="{{id}}">
+    <a class="userLink" href="/user/{{id}}">
       <div class="userCard">
         <img src="images/{{img}}" alt="user image">
         <h3>{{name}}</h3>
@@ -17,3 +17,8 @@
     {{/each}}
   </section>
 </main>
+
+<a href='/registration'>
+  <button>Create User</button>
+</a>
+
