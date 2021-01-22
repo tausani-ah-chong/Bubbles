@@ -1,13 +1,32 @@
-<header>
-  <img src={{user.user1.img}} alt="" style="width: 500px; height: 500px;">
-  <h1>{{user.user1.name}}</h1>
-  <h1>{{user.user1.city}}</h1>
+<header class="profileTitle">
+  <h1>Bubbles</h1>
+  <p>Music your way</p>
 </header>
 
 <main>
-  <ul>
-    <li>
-      <a href={{playListId}}> {{currentlist.playlistName}}</a>
-    </li>
-  </ul>
+  <section class="songTitle">
+    <ul>
+      {{#each songs}}
+      <a href="song/{{id}}">
+        <li>
+          <p>{{name}}</p>
+          <p>{{artist}}</p>
+        </li>
+      </a>
+      {{/each}}
+    </ul>
+    <button class="whiteBtn"><a href="/">HOME</a></button>
+  </section>
 </main>
+
+{{!--
+
+playlistName: 'Multi 1',
+songs: [
+{ name: 'Levitating', artist: 'Dua Lipa' },
+{ name: 'Midnight Sky', artist: 'Miley Cyrus' },
+{ name: 'Mood', artist: '24kGoldn feat. Iann Dior' },
+{ name: 'Head & Heart', artist: 'Joel Corry x MNEK' },
+{ name: 'Therefore I Am', artist: 'Billie Eilish' }
+]
+--}}

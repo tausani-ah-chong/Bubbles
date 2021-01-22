@@ -63,18 +63,38 @@ a.userLink {
 }
 
 .bio {
-  padding-left: 1.5%;
+  padding-left: 2.5%;
   justify-self: center;
 }
 
 .bio > header > h1 {
-  font-size: 80px;
+  font-size: 70px;
   margin: 1%;
   text-transform: uppercase;
 }
 
 .bio > header > h2 {
-  font-size: 75px;
-  margin-top: 1.5%;
+  padding-left: 8px;
+  font-size: 35px;
+  margin-top: 0;
   margin-bottom: 2.5%;
+  text-transform: uppercase;
+}
+
+.bio ul li > p{
+  font-size: 20px;
+  padding-left: 8px;
+
+}
+
+.bio button {
+  padding-left: 8px;
+}
+
+/* 
+  playlist page
+*/
+
+.songTitle > p {
+  font-size: 40px;
 }

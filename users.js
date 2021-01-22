@@ -50,7 +50,7 @@ router.get('/playlist/:id', (req, res) => {
             playlistName,
             songs
         }
-        // console.log(viewData)
+        console.log(viewData)
         res.render('playlist', viewData)
         return null
     })
