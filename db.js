@@ -40,6 +40,7 @@ function joinUsersWithPlaylist(id, db = database) {
     })
 }
 
+
 function insertUser (input, db = database) {
     return db('users')
       .insert( { name: input.name, city: input.city, img: input.img } )

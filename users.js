@@ -58,11 +58,15 @@ router.get('/playlist/:id', (req, res) => {
 })
 
 
-// REGISTRATION PAGE ROUTE
-
 router.get('/registration', (req, res) => {
     res.render('registration')
 })
 
+
+router.post('/registration', (req, res) => {
+    const { name, city } = req.body
+    return db.createUser(name, city)
+        .then(() => res.redirect('/'))
+})
 
 module.exports = router
