@@ -7,6 +7,14 @@ module.exports = {
   getSongsArtist,
   joinUsersWithPlaylist,
   insertUser,
+  getSong
+}
+
+function getSong (id, db = database) {
+  return db('songs')
+  .where('id', id)
+  .first()
+  .select()
 }
 
 function getUsers (db = database) {
@@ -26,7 +34,7 @@ function joinUsersWithPlaylist(id, db = database) {
   return db('users')
     .join('playlists', 'users.id', 'playlists.user_id')
     .where('users.id', id)
-    .select('users.id', 'users.name as userName',  'playlists.name as playlistName', 'img', 'city')
+    .select('users.id', 'users.name as userName',  'playlists.name as playlistName', 'img', 'city', 'playlists.id as playlistId')
     .then(result => {
       return {
         img: result[0].img,
@@ -39,6 +47,7 @@ function joinUsersWithPlaylist(id, db = database) {
       }
     })
 }
+
 
 function insertUser (input, db = database) {
     return db('users')
