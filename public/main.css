@@ -99,3 +99,16 @@ a.userLink {
   font-size: 30px;
   margin: 1% 0;
 }
+
+.btn {
+  margin: 3rem;
+  font-size: large;
+}
+
+.divbtn {
+  text-align: center;
+}
+
+.header {
+  margin: 3rem;
+}
