@@ -34,7 +34,7 @@ function joinUsersWithPlaylist(id, db = database) {
   return db('users')
     .join('playlists', 'users.id', 'playlists.user_id')
     .where('users.id', id)
-    .select('users.id', 'users.name as userName',  'playlists.name as playlistName', 'img', 'city')
+    .select('users.id', 'users.name as userName',  'playlists.name as playlistName', 'img', 'city', 'playlists.id as playlistId')
     .then(result => {
       return {
         img: result[0].img,
