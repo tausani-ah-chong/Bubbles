@@ -59,10 +59,13 @@ router.get('/song/:id', (req, res) => {
     const songId = req.params.id
     db.getSong(songId)
       .then(song => {
-          const query = song.artist + ' ' + song.name
+          const query = song.artist + ' ' + song.song_name
           return yt.getFirstVideo(query)
       })
-      .then(result => console.log(result))
+      .then(result => {
+          const videoURL = 'https://www.youtube.com/watch?v=' + result
+          res.redirect(videoURL)
+      })
 
 })
 module.exports = router
