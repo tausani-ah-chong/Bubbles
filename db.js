@@ -6,6 +6,7 @@ module.exports = {
   getUsers,
   getSongsArtist,
   joinUsersWithPlaylist,
+  createUser,
 }
 
 function getUsers (db = database) {
@@ -28,3 +29,11 @@ function joinUsersWithPlaylist(id, db = database) {
     .then(result => result)
 }
 
+function createUser(name, city, db = database) {
+  return db('users')
+    .insert({
+      name,
+      city
+    })
+    .then(result => result[0])
+  }
