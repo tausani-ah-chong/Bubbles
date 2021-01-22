@@ -8,11 +8,21 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   color: #252525;
+  list-style: none;
 }
 
 .container {
   width: 75%;
   margin: auto;
+}
+
+.whiteBtn {
+  /* background-color: #007bff; */
+  border: solid #252525 2px ;
+  padding: 9px 14px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 10px;
 }
 
 .row {
@@ -39,8 +49,32 @@ a.userLink {
   margin: 0;
 }
 
-.userProfile > img{
-  width: 500px; 
-  height: 500px;
+/* profile page */
+.userProfile {
+  display: flex;
 }
 
+.userProfile > img{
+  width: 55%; 
+}
+
+.profileTitle > h1 {
+  margin-bottom: 1%;
+}
+
+.bio {
+  padding-left: 1.5%;
+  justify-self: center;
+}
+
+.bio > header > h1 {
+  font-size: 80px;
+  margin: 1%;
+  text-transform: uppercase;
+}
+
+.bio > header > h2 {
+  font-size: 75px;
+  margin-top: 1.5%;
+  margin-bottom: 2.5%;
+}
