@@ -25,7 +25,7 @@ router.get ('/user/:id', (req, res) => {
     return db.joinUsersWithPlaylist(id)
         .then(viewData => {
             console.log(viewData)
-           return  res.render('user', {viewData: viewData})
+           return  res.render('user',  viewData)
         })
         .catch(err => {
             res.status(500).send('DATABASE ERROR: ' + err.message)
